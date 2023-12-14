@@ -1,4 +1,5 @@
 from crud.user import router as crud_router
+from admin_routes import router as admin_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -19,5 +20,6 @@ async def welcome() -> dict:
             "message": "Hello World"
             }
 app.include_router(crud_router)
+app.include_router(admin_router)
 
 
